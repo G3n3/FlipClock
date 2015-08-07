@@ -2194,6 +2194,7 @@ var FlipClock;
             ].join(''));
 
             // this.meridium.insertAfter(this.lists[this.lists.length - 1].$el);
+            this.meridium.insertAfter(this.lists[this.lists.length - 4].$el);
         },
 
         /**
@@ -2206,13 +2207,10 @@ var FlipClock;
             if (!this.initFlip) {
 
                 var $el = this.factory.$el,
-                    $flipcards = $el.find('ul');
+                    $flipcards = $el.find('.flip');
 
                 // Remove last few now-useless flip cards
                 $el.find('ul').slice(-3).remove();
-
-                // Move meridium to end
-                this.meridium.insertAfter($flipcards.last());
 
                 // Move dividers to correct positions
                 var dividers = $el.find('.flip-clock-divider');
